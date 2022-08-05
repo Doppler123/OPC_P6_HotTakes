@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
             next()
         }  
         else {
-            res.status(400).json({ message: 'Cette adresse mail n\'a pas un format valide' });
+            res.status(401).json({ message: 'Cette adresse mail n\'a pas un format valide' });
         }
     }
     emailVerification(req.body.email)
