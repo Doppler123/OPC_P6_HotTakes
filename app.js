@@ -19,7 +19,9 @@ mongoose.connect(process.env.MONGO_DB,
 
 app.use(express.json());
 
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(helmet({
+  crossOriginResourcePolicy : false
+}));
 
 app.use((req, res, next) => { 
   res.setHeader('Access-Control-Allow-Origin', '*');
